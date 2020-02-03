@@ -15,7 +15,7 @@ public class RepositoryReader {
         StudentReader studentReader = new StudentReader();
         List<Student> students = studentReader.readAllStudentData();
         college.setStudents(students);
-        
+
         CourseReader courseReader = new CourseReader();
         List<Course> courses = courseReader.readAllCourseData();
 
