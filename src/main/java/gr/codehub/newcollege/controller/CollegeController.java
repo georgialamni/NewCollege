@@ -13,7 +13,11 @@ public class CollegeController {
 
     private CollegeService collegeService;
 
-    @GetMapping("course")
+    public CollegeController(){
+        collegeService = new CollegeService();
+    }
+
+    @GetMapping("courses")
     public List<Course> getCourses() {
         List<Course> courses = new CollegeService().getCourses();
         return courses;

@@ -1,5 +1,6 @@
 package gr.codehub.newcollege.repository;
 
+import gr.codehub.newcollege.controller.Registry;
 import gr.codehub.newcollege.model.Attendance;
 import gr.codehub.newcollege.model.Mark;
 import gr.codehub.newcollege.model.Module;
@@ -17,10 +18,10 @@ public class AttendanceReader {
         this.module = module;
     }
 
-    public List<Attendance> readAllAttendanceData(List<Student> students, List<Module> modules) {
+    public List<Attendance> readAllAttendanceData() {
         List<Attendance> attendances = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
-            Student student = students.get(Util.randomInt(0, students.size() - 1));
+        for (int i = 1; i <= 100; i++) {
+            Student student = Registry.chooseRandomCollegeStudent();
             Attendance a = readAttendanceData(student);
             attendances.add(a);
         }

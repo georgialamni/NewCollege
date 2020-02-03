@@ -12,11 +12,12 @@ public class RepositoryReader {
         CollegeReader collegeReader = new CollegeReader();
         College college = collegeReader.readCollegeData();
 
-        CourseReader courseReader = new CourseReader();
-        List<Course> courses = courseReader.readAllCourseData();
-
         StudentReader studentReader = new StudentReader();
         List<Student> students = studentReader.readAllStudentData();
+        college.setStudents(students);
+        
+        CourseReader courseReader = new CourseReader();
+        List<Course> courses = courseReader.readAllCourseData();
 
         college.setCourses(courses);
         college.setStudents(students);

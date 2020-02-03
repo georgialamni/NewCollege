@@ -21,6 +21,10 @@ public class CourseReader {
         Course course = new Course();
         String name = Util.randomName("Course");
         course.setName(name);
+
+        ModuleReader moduleReader = new ModuleReader();
+        course.setModules(moduleReader.readAllModuleData());
+
         return course;
     }
 }
